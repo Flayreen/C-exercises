@@ -1,4 +1,6 @@
 ﻿
+using System.Threading.Channels;
+
 namespace Constructions
 {
     internal class Program
@@ -15,11 +17,8 @@ namespace Constructions
                     Console.WriteLine($"{program.Key}. {program.Value}");
                 }
 
-                while ((int.TryParse(Console.ReadLine(), out useChoice)) &&
-                       !Array.Exists(validChoices, element => element == useChoice))
-                {
-                    Console.Write("Невірний ввід. Введіть коректне число ");
-                }
+                Console.Write("Ваш вибір: ");
+                useChoice = Convert.ToInt32(Console.ReadLine());
 
                 switch (useChoice)
                 {
@@ -43,6 +42,12 @@ namespace Constructions
                         break;
                     case 4:
                         Console.WriteLine("Пока!");
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Невірне значення");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                 }
             } while (useChoice != 4);
