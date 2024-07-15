@@ -45,7 +45,7 @@ namespace Constructions
                         Console.WriteLine("Пока!");
                         break;
                 }
-            } while (useChoice != 0);
+            } while (useChoice != 4);
         }
 
         private static Dictionary<int, string> _programs = new Dictionary<int, string>()
