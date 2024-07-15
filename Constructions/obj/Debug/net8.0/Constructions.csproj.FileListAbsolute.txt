@@ -1,0 +1,15 @@
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/bin/Debug/net8.0/Constructions
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/bin/Debug/net8.0/Constructions.deps.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/bin/Debug/net8.0/Constructions.runtimeconfig.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/bin/Debug/net8.0/Constructions.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/bin/Debug/net8.0/Constructions.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.AssemblyInfoInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.AssemblyInfo.cs
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.csproj.CoreCompileInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.sourcelink.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/refint/Constructions.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/Constructions.genruntimeconfig.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Constructions/obj/Debug/net8.0/ref/Constructions.dll
