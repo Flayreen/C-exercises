@@ -1,0 +1,15 @@
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/bin/Debug/net8.0/Arithmetic
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/bin/Debug/net8.0/Arithmetic.deps.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/bin/Debug/net8.0/Arithmetic.runtimeconfig.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/bin/Debug/net8.0/Arithmetic.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/bin/Debug/net8.0/Arithmetic.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.AssemblyInfoInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.AssemblyInfo.cs
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.csproj.CoreCompileInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.sourcelink.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/refint/Arithmetic.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/Arithmetic.genruntimeconfig.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/Debug/net8.0/ref/Arithmetic.dll
