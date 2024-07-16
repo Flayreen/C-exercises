@@ -1,0 +1,15 @@
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/bin/Debug/net8.0/Circles
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/bin/Debug/net8.0/Circles.deps.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/bin/Debug/net8.0/Circles.runtimeconfig.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/bin/Debug/net8.0/Circles.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/bin/Debug/net8.0/Circles.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.AssemblyInfoInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.AssemblyInfo.cs
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.csproj.CoreCompileInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.sourcelink.json
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/refint/Circles.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/Circles.genruntimeconfig.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/Debug/net8.0/ref/Circles.dll
