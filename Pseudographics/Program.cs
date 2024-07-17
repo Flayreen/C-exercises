@@ -8,7 +8,7 @@
             do
             {
                 Console.WriteLine("Вибери задачу з переліку, вибравши її номер");
-                Console.WriteLine($"1. Намалюйте прямокутний трикутник \n2. Намалюйте рівнобедрений трикутник \n3. Намалюйте трикутник, який прилягає до лівої сторони \n4. Намалюйте трикутник, який прилягає до правої сторони \n5. Послідовність Лукаса \n6. Вихід з програми");
+                Console.WriteLine($"1. Намалюйте прямокутний трикутник \n2. Намалюйте рівнобедрений трикутник \n3. Намалюйте трикутник, який прилягає до лівої сторони \n4. Намалюйте трикутник, який прилягає до правої сторони \n5. Намалюйте пісковий годинник \n6. Вийти з програми");
                 Console.Write("Ваш вибір: ");
                 useChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -38,12 +38,12 @@
                         Console.ReadKey();
                         Console.Clear();
                         break;
-                    // case 5:
-                    //     Console.Clear();
-                    //     Lucas();
-                    //     Console.ReadKey();
-                    //     Console.Clear();
-                    //     break;
+                    case 5:
+                        Console.Clear();
+                        DrawVerticalSandClock();
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                     case 6:
                         Console.WriteLine("Пока!");
                         break;
@@ -275,6 +275,66 @@
 
         }
         
+        private static void DrawVerticalSandClock()
+        {
+            // Отримання даних про годинника від користувача
+            int rectangularHeight;
+            char rectangularSymbol;
+            Console.WriteLine("Програма №5 запущена!");
+            Console.Write("Введіть висоту однієї частини пісочного годинника: ");
+            while (!int.TryParse(Console.ReadLine(), out rectangularHeight))
+            {
+                Console.Write("Будь ласка, введіть коректне значення! ");
+            }
+            Console.Write("Введіть символ пісочного годинника: ");
+            while (!char.TryParse(Console.ReadLine(), out rectangularSymbol))
+            {
+                Console.Write("Будь ласка, введіть коректне значення! ");
+            }
+            
+            // Створення розмірів годинника
+            int totalRectangleHeight = rectangularHeight * 2;
+            int rectangularWidth = ((rectangularHeight - 1) * 2) + 1;
+            char[,] triangle = new char[totalRectangleHeight, rectangularWidth];
+            
+            for (int i = 0; i < triangle.GetLength(0); i++)
+            {
+                for (int j = 0; j < triangle.GetLength(1); j++)
+                {
+                    triangle[i, j] = ' ';
+                }
+            }
+            
+            
+            // Заповнення годинника символами
+            int start = 0;
+            int upperWay = 0;
+            for (int i = totalRectangleHeight - 1; i >= 0; i--)
+            {
+                for (int j = start; j < rectangularWidth; j++)
+                {
+                    triangle[i, j] = rectangularSymbol;
+                    triangle[upperWay, j] = rectangularSymbol;
+                }
+
+                upperWay++;
+                start++; 
+                rectangularWidth--;
+                totalRectangleHeight--;
+            }
+            
+            // Виведення годинника в консоль
+            for (int i = 0; i < triangle.GetLength(0); i++)
+            {
+                for (int j = 0; j < triangle.GetLength(1); j++)
+                {
+                    Console.Write(triangle[i, j]);
+                }
+
+                Console.WriteLine();
+            }
+
+        }
         
     }
 }
