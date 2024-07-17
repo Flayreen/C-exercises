@@ -158,7 +158,7 @@
         {
             int rectangularWidth;
             char rectangularSymbol;
-            Console.WriteLine("Програма №1 запущена!");
+            Console.WriteLine("Програма №3 запущена!");
             Console.Write("Введіть довжину трикутника: ");
             while (!int.TryParse(Console.ReadLine(), out rectangularWidth))
             {
