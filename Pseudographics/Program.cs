@@ -59,6 +59,7 @@
 
         private static void DrawRectangular()
         {
+            // Отримання даних про трикутник від користувача
             int rectangularWidth;
             char rectangularSymbol;
             Console.WriteLine("Програма №1 запущена!");
@@ -72,7 +73,8 @@
             {
                 Console.Write("Будь ласка, введіть коректне значення! ");
             }
-
+            
+            // Створення розмірів трикутника
             char[,] triangle = new char[rectangularWidth, rectangularWidth];
             
             for (int i = 0; i < triangle.GetLength(0); i++)
@@ -82,7 +84,8 @@
                     triangle[i, j] = ' ';
                 }
             }
-
+            
+            // Заповнення трикутника символами
             for (int i = rectangularWidth - 1; i >= 0; i--)
             {
                 for (int j = 0; j < rectangularWidth; j++)
@@ -92,6 +95,7 @@
                 rectangularWidth--;
             }
             
+            // Виведення трикутника в консоль
             for (int i = 0; i < triangle.GetLength(0); i++)
             {
                 for (int j = 0; j < triangle.GetLength(1); j++)
@@ -106,6 +110,7 @@
 
         private static void DrawIsoscelesTriangle()
         {
+            // Отримання даних про трикутник від користувача
             int rectangularHeight;
             char rectangularSymbol;
             Console.WriteLine("Програма №2 запущена!");
@@ -119,7 +124,8 @@
             {
                 Console.Write("Будь ласка, введіть коректне значення! ");
             }
-
+            
+            // Створення розмірів трикутника
             int rectangularWidth = ((rectangularHeight - 1) * 2) + 1;
             char[,] triangle = new char[rectangularHeight, rectangularWidth];
             
@@ -130,7 +136,8 @@
                     triangle[i, j] = ' ';
                 }
             }
-
+            
+            // Заповнення трикутника символами
             int start = 0;
             for (int i = rectangularHeight - 1; i >= 0; i--)
             {
@@ -143,6 +150,7 @@
                 start++;
             }
             
+            // Виведення трикутника в консоль
             for (int i = 0; i < triangle.GetLength(0); i++)
             {
                 for (int j = 0; j < triangle.GetLength(1); j++)
@@ -156,6 +164,7 @@
         
         private static void DrawLeftTriangle()
         {
+            // Отримання даних про трикутник від користувача
             int rectangularWidth;
             char rectangularSymbol;
             Console.WriteLine("Програма №3 запущена!");
@@ -170,6 +179,7 @@
                 Console.Write("Будь ласка, введіть коректне значення! ");
             }
             
+            // Створення розмірів трикутника
             int rectangularHeight = ((rectangularWidth - 1) * 2) + 1;
             char[,] triangle = new char[rectangularHeight, rectangularWidth];
             
@@ -180,7 +190,8 @@
                     triangle[i, j] = ' ';
                 }
             }
-
+            
+            // Заповнення трикутника символами
             int start = 0;
             for (int i = rectangularHeight / 2; i >= 0; i--)
             {
@@ -194,7 +205,7 @@
                 start += 2;
             }
             
-            
+            // Виведення трикутника в консоль
             for (int i = 0; i < triangle.GetLength(0); i++)
             {
                 for (int j = 0; j < triangle.GetLength(1); j++)
@@ -209,6 +220,7 @@
         
         private static void DrawRightTriangle()
         {
+            // Отримання даних про трикутник від користувача
             int rectangularWidth;
             char rectangularSymbol;
             Console.WriteLine("Програма №4 запущена!");
@@ -223,6 +235,7 @@
                 Console.Write("Будь ласка, введіть коректне значення! ");
             }
             
+            // Створення розмірів трикутника
             int rectangularHeight = ((rectangularWidth - 1) * 2) + 1;
             char[,] triangle = new char[rectangularHeight, rectangularWidth];
             
@@ -234,6 +247,7 @@
                 }
             }
             
+            // Заповнення трикутника символами
             int start = 0;
             int right = rectangularWidth - 1;
             for (int i = rectangularHeight / 2; i >= 0; i--)
@@ -248,7 +262,7 @@
                 start += 2;
             }
             
-            
+            // Виведення трикутника в консоль
             for (int i = 0; i < triangle.GetLength(0); i++)
             {
                 for (int j = 0; j < triangle.GetLength(1); j++)
