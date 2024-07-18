@@ -64,13 +64,13 @@ public class Library
                     {
                         bookToHide.isHidden = true;
                         Console.WriteLine($"Ви успішно приховали книгу {bookToHide.Title} - автор {bookToHide.Author.Name} {bookToHide.Author.Surname}.");
-                        Console.WriteLine("Enter - продовжити приховувати книги");
-                        Console.WriteLine("Esc - вийти до головного меню");
+                        Console.WriteLine("Нажміть будь-яку кнопку, щоб продовжити");
+                        Console.WriteLine("Enter - вийти до головного меню");
                         
                         var key = Console.ReadKey(true).Key;
                         if (key == ConsoleKey.Enter)
                         {
-                            cw
+                            break;
                         }
                     }
                     else

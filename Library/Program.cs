@@ -34,8 +34,6 @@ internal abstract class Program
                  case 3:
                      Console.Clear();
                      library.HideBook();
-                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
-                     Console.ReadKey();
                      Console.Clear();
                      break;
                  case 4:

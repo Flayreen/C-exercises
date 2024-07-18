@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/Circles.csproj": {}
+    "/Users/olegvakarcuk/RiderProjects/C-exercises/Circles/Circles.csproj": {}
   },
   "projects": {
-    "/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/Circles.csproj": {
+    "/Users/olegvakarcuk/RiderProjects/C-exercises/Circles/Circles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/Circles.csproj",
+        "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises/Circles/Circles.csproj",
         "projectName": "Circles",
-        "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/Circles.csproj",
+        "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Circles/Circles.csproj",
         "packagesPath": "/Users/olegvakarcuk/.nuget/packages/",
-        "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Circles/obj/",
+        "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Circles/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olegvakarcuk/.nuget/NuGet/NuGet.Config"

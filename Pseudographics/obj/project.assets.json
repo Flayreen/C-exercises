@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Pseudographics/Pseudographics.csproj",
+      "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises/Pseudographics/Pseudographics.csproj",
       "projectName": "Pseudographics",
-      "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Pseudographics/Pseudographics.csproj",
+      "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Pseudographics/Pseudographics.csproj",
       "packagesPath": "/Users/olegvakarcuk/.nuget/packages/",
-      "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Pseudographics/obj/",
+      "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Pseudographics/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/olegvakarcuk/.nuget/NuGet/NuGet.Config"

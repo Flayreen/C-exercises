@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/Arithmetic.csproj",
+      "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises/Arithmetic/Arithmetic.csproj",
       "projectName": "Arithmetic",
-      "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/Arithmetic.csproj",
+      "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Arithmetic/Arithmetic.csproj",
       "packagesPath": "/Users/olegvakarcuk/.nuget/packages/",
-      "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Arithmetic/obj/",
+      "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Arithmetic/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/olegvakarcuk/.nuget/NuGet/NuGet.Config"

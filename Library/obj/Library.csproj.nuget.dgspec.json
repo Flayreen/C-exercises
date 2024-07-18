@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olegvakarcuk/RiderProjects/C-exercises1/Library/Library.csproj": {}
+    "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/Library.csproj": {}
   },
   "projects": {
-    "/Users/olegvakarcuk/RiderProjects/C-exercises1/Library/Library.csproj": {
+    "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Library/Library.csproj",
+        "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/Library.csproj",
         "projectName": "Library",
-        "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Library/Library.csproj",
+        "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/Library.csproj",
         "packagesPath": "/Users/olegvakarcuk/.nuget/packages/",
-        "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises1/Library/obj/",
+        "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olegvakarcuk/.nuget/NuGet/NuGet.Config"
