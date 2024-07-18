@@ -1,10 +1,8 @@
-using System.Threading.Channels;
-
 namespace Library;
 
 public class Library
 {
-    public List<Book> BooksList { get; set; } = [];
+    private List<Book> BooksList { get; set; } = [];
 
     public Library()
     {
@@ -50,30 +48,40 @@ public class Library
     {
         if (BooksList.Count != 0)
         {
-            string hiddenBook;
             foreach (var books in BooksList.Where(b => !b.isHidden))
             {
                 Console.WriteLine($"{books.Title} - автор {books.Author.Name} {books.Author.Surname}");
             }
-            
-            hiddenBook = GetNotEmptyInput("\nВведіть назву книги, яку ви хочете приховати: ");
-            var bookToHide = BooksList.FirstOrDefault(b => b.Title.ToLower() == hiddenBook.ToLower().Trim());
 
-            if (bookToHide != null)
+            while (true)
             {
-                if (!bookToHide.isHidden)
+                string hiddenBook = GetNotEmptyInput("\nВведіть назву книги, яку ви хочете приховати: ");
+                var bookToHide = BooksList.FirstOrDefault(b => b.Title.ToLower() == hiddenBook.ToLower().Trim());
+
+                if (bookToHide != null)
                 {
-                    bookToHide.isHidden = true;
-                    Console.WriteLine($"Ви успішно приховали книгу {bookToHide.Title} - автор {bookToHide.Author.Name} {bookToHide.Author.Surname}");   
+                    if (!bookToHide.isHidden)
+                    {
+                        bookToHide.isHidden = true;
+                        Console.WriteLine($"Ви успішно приховали книгу {bookToHide.Title} - автор {bookToHide.Author.Name} {bookToHide.Author.Surname}.");
+                        Console.WriteLine("Enter - продовжити приховувати книги");
+                        Console.WriteLine("Esc - вийти до головного меню");
+                        
+                        var key = Console.ReadKey(true).Key;
+                        if (key == ConsoleKey.Enter)
+                        {
+                            cw
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Книга {bookToHide.Title} вже прихована");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"Книга {bookToHide.Title} вже прихована");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Не знайдено книги за цією назвою");
+                    Console.WriteLine("Не знайдено книги за цією назвою");
+                }   
             }
         }
         else
@@ -148,7 +156,7 @@ public class Library
     
     private static string GetNotEmptyInput(string prompt)
     {
-        string input = string.Empty;
+        string? input = string.Empty;
 
         while (string.IsNullOrWhiteSpace(input))
         {

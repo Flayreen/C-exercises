@@ -20,30 +20,35 @@ internal abstract class Program
                  case 1:
                      Console.Clear();
                      library.ShowAllBooks();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();
                      break;
                  case 2:
                      Console.Clear();
                      library.AddBook();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();
                      break;
                  case 3:
                      Console.Clear();
                      library.HideBook();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();
                      break;
                  case 4:
                      Console.Clear();
                      library.DeleteFromHiddenBook();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();
                      break;
                  case 5:
                      Console.Clear();
                      library.FindTheBook();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();
                      break;
