@@ -105,7 +105,6 @@
 
                 Console.WriteLine();
             }
-
         }
 
         private static void DrawIsoscelesTriangle()

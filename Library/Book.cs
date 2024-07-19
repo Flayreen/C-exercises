@@ -7,6 +7,8 @@ public class Book
     private static int _uniqueId = 0;
     
     public string Title { get; set; }
+    
+    public int Year { get; set; }
 
     public Author Author { get; set; }
     
@@ -14,9 +16,10 @@ public class Book
 
     public bool isHidden { get; set; } = false;
 
-    public Book(string title, Author author)
+    public Book(string title, int year, Author author)
     {
         Title = title;
+        Year = year;
         Author = author;
         Id = _uniqueId;
         _uniqueId++;
