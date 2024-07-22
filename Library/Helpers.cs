@@ -58,7 +58,7 @@ public abstract class Helpers
     
     protected static void WriteFileAuthors(string path, List<Author> authorsList)
     {
-        string authorsListJson = JsonSerializer.Serialize(authorsList);
+        string authorsListJson = JsonSerializer.Serialize(authorsList, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(path, authorsListJson);
     }
     
@@ -68,7 +68,7 @@ public abstract class Helpers
 
         if (authorsListString.Length > 0)
         {
-            var authorsList = JsonSerializer.Deserialize<List<Author>>(authorsListString);
+            var authorsList = JsonSerializer.Deserialize<List<Author>>(authorsListString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             return authorsList;   
         }
         else

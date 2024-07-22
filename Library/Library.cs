@@ -1,9 +1,9 @@
 namespace Library;
 public class Library : Helpers
 {
-    private const string PathToBooksFile = "db/books.json";
+    private const string PathToBooksFile = "db/books.txt";
     
-    private const string PathToAuthorsFile = "db/authors.json";
+    private const string PathToAuthorsFile = "db/authors.txt";
     
     private List<Book> BooksList { get; set; } = ReadFileBooks(PathToBooksFile) ?? [];
     
@@ -13,7 +13,8 @@ public class Library : Helpers
     {
         NotEmptyInput("Введіть назву книги: ", out string bookTitle);
         NotEmptyInput("Введіть рік видачі книги ", out int bookYear);
-
+        
+        // Перевірка, чи є ця книга в нашій бібліотеці
         var findBook = BooksList.FirstOrDefault(b =>
             b.Title.ToLower() == bookTitle.ToLower().Trim() 
             && b.Year == bookYear 
@@ -23,8 +24,10 @@ public class Library : Helpers
         {
             NotEmptyInput("Введіть імʼя автора ", out string authorName);
             NotEmptyInput("Введіть прізвище автора ", out string authorSurname);
+            
             var findAuthor = AuthorsList.FirstOrDefault(a => a.Name == authorName && a.Surname == authorSurname);
             
+            // Перевірка, чи є нас такий автор в списку бібліотеки
             if (findAuthor == null)
             {
                 NotEmptyInput("Введіть коротку біографія автора ", out string authorBiography);
