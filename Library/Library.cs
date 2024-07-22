@@ -1,28 +1,46 @@
 namespace Library;
 public class Library : Helpers
 {
-    private const string PathToBooksFile = "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/books.json";
+    private const string PathToBooksFile = "db/books.json";
+    
+    private const string PathToAuthorsFile = "db/authors.json";
+    
     private List<Book> BooksList { get; set; } = ReadFileBooks(PathToBooksFile) ?? [];
+    
+    private List<Author> AuthorsList { get; set; } = ReadFileAuthors(PathToAuthorsFile) ?? [];
     
     public void AddBook()
     {
         NotEmptyInput("Введіть назву книги: ", out string bookTitle);
         NotEmptyInput("Введіть рік видачі книги ", out int bookYear);
-        NotEmptyInput("Введіть імʼя автора ", out string authorName);
-        NotEmptyInput("Введіть прізвище автора ", out string authorSurname);
 
         var findBook = BooksList.FirstOrDefault(b =>
             b.Title.ToLower() == bookTitle.ToLower().Trim() 
             && b.Year == bookYear 
-            && b.Author.Name.ToLower() == authorName.ToLower().Trim() 
-            && b.Author.Surname.ToLower() == authorSurname.ToLower().Trim()
         );
-
+        
         if (findBook == null)
         {
-            Author author = new Author(authorName, authorSurname);
-            Book book = new Book(bookTitle, bookYear, author);
-            BooksList.Add(book);
+            NotEmptyInput("Введіть імʼя автора ", out string authorName);
+            NotEmptyInput("Введіть прізвище автора ", out string authorSurname);
+            var findAuthor = AuthorsList.FirstOrDefault(a => a.Name == authorName && a.Surname == authorSurname);
+            
+            if (findAuthor == null)
+            {
+                NotEmptyInput("Введіть коротку біографія автора ", out string authorBiography);
+                Author author = new Author(authorName, authorSurname, authorBiography);
+                Book book = new Book(bookTitle, bookYear, author.Id);
+                author.BooksList.Add(book);
+                BooksList.Add(book);
+                AuthorsList.Add(author);
+            }
+            else
+            {
+                Book book = new Book(bookTitle, bookYear, findAuthor.Id);
+                findAuthor.BooksList.Add(book);
+                BooksList.Add(book);
+            }
+            WriteFileAuthors(PathToAuthorsFile, AuthorsList);
             WriteFileBooks(PathToBooksFile, BooksList);
             
             Console.WriteLine($"Ви успішно добавили книгу - {bookTitle}!");   
@@ -35,19 +53,18 @@ public class Library : Helpers
 
     public void ShowAllBooks()
     {
-        if (BooksList.Count != 0)
+        if (BooksList.Any(b => !b.IsHidden))
         {
-            WriteFileBooks(PathToBooksFile, BooksList);
-            var booksList = BooksList.Where(b => !b.isHidden)
+            var booksList = BooksList.Where(b => !b.IsHidden)
                 .OrderBy(b => b.Title)
                 .ThenBy(b => b.Year)
-                .ThenBy(b => b.Author.Name)
-                .ThenBy(b => b.Author.Surname)
+                .ThenBy(b => AuthorsList.FirstOrDefault(a => a.Id == b.authorId)!.Name)
+                .ThenBy(b => AuthorsList.FirstOrDefault(a => a.Id == b.authorId)!.Surname)
                 .ToList();
             
             foreach (var books in booksList)
             {
-                Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {books.Author.Name} {books.Author.Surname}");
+                Console.WriteLine($"Книга \"{books.Title}\", рік видачі {books.Year} - автор {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Name} {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Surname}");
             }   
         }
         else
@@ -58,11 +75,11 @@ public class Library : Helpers
 
     public void HideBook()
     {
-        if (BooksList.Count != 0)
+        if (BooksList.Any(b => !b.IsHidden))
         {
-            foreach (var books in BooksList.Where(b => !b.isHidden))
+            foreach (var books in BooksList.Where(b => !b.IsHidden))
             {
-                Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {books.Author.Name} {books.Author.Surname}");
+                Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Name} {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Surname}");
             }
             
             NotEmptyInput("\nВведіть назву книги, яку ви хочете приховати: ", out string hiddenBook);
@@ -70,9 +87,9 @@ public class Library : Helpers
 
             if (bookToHide != null)
             {
-                if (!bookToHide.isHidden)
+                if (!bookToHide.IsHidden)
                 {
-                    bookToHide.isHidden = true;
+                    bookToHide.IsHidden = true;
                     WriteFileBooks(PathToBooksFile, BooksList);
                     
                     Console.WriteLine($"Ви успішно приховали книгу {bookToHide.Title}");
@@ -96,13 +113,13 @@ public class Library : Helpers
     
     public void DeleteFromHiddenBook()
     {
-        var hiddenBooksList = BooksList.Where(b => b.isHidden).ToList();
+        var hiddenBooksList = BooksList.Where(b => b.IsHidden).ToList();
         if (hiddenBooksList.Count != 0)
         {
             Console.WriteLine("Перелік прихованих книг");
             foreach (var books in hiddenBooksList)
             {
-                Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {books.Author.Name} {books.Author.Surname}");
+                Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Name} {AuthorsList.FirstOrDefault(a => a.Id == books.authorId)!.Surname}");
             }
             
             NotEmptyInput("\nВведіть назву книги, яку ви хочете видалити з прихованих: ", out string shownBook);
@@ -110,9 +127,9 @@ public class Library : Helpers
 
             if (bookToHide != null)
             {
-                if (bookToHide.isHidden)
+                if (bookToHide.IsHidden)
                 {
-                    bookToHide.isHidden = false;
+                    bookToHide.IsHidden = false;
                     WriteFileBooks(PathToBooksFile, BooksList);
                     Console.WriteLine($"Ви успішно видалили з прихованих книгу {bookToHide.Title}");   
                 }
@@ -134,20 +151,19 @@ public class Library : Helpers
 
     public void FindTheBook()
     {
-        if (BooksList.Count != 0)
+        if (BooksList.Any(b => !b.IsHidden))
         {
-            NotEmptyInput("Введіть назву книгу, імʼя або фамілію автора: ", out string searchPhrase).ToLower().Trim();
-            var selectBooks = BooksList.Where(b => b.Title.ToLower().Contains(searchPhrase) 
-                                                   || b.Year.ToString().Contains(searchPhrase) 
-                                                   || b.Author.Name.ToLower().Contains(searchPhrase) 
-                                                   || b.Author.Surname.ToLower().Contains(searchPhrase)).ToList();
+            NotEmptyInput("Введіть назву книгу, рік видачі, імʼя або фамілію автора: ", out string searchPhrase);
+            var selectBooks = BooksList.Where(b => 
+                b.Title.ToLower().Contains(searchPhrase.ToLower().Trim()) || 
+                b.Year.ToString().Contains(searchPhrase.ToLower().Trim())).ToList();
             
             if (selectBooks.Count != 0)
             {
                 Console.WriteLine("Результат:");
                 foreach (var book in selectBooks)
                 {
-                    Console.WriteLine($"Книга {book.Title}, рік видачі {book.Year} - автор {book.Author.Name} {book.Author.Surname}");
+                    Console.WriteLine($"Книга {book.Title}, рік видачі {book.Year} - автор {AuthorsList.FirstOrDefault(a => a.Id == book.authorId)!.Name} {AuthorsList.FirstOrDefault(a => a.Id == book.authorId)!.Surname}");
                 }
             }
             else
@@ -158,6 +174,30 @@ public class Library : Helpers
         else
         {
             Console.WriteLine("Бібліотека пуста, щоб щось шукати...");
+        }
+    }
+    
+    public void ShowAllAuthors()
+    {
+        if (AuthorsList.Count > 0)
+        {
+            var authorList = AuthorsList.OrderBy(a => a.Name).ThenBy(a => a.Surname).ToList();
+            
+            foreach (var author in authorList)
+            {
+                Console.WriteLine($"Автор - {author.Name} {author.Surname}");
+                Console.WriteLine($"Біографія - {author.Biography}");
+                Console.Write("Книги: ");
+                foreach (var book in author.BooksList)
+                {
+                    Console.Write(book.Title + ", ");
+                }
+                Console.WriteLine("\n");
+            }   
+        }
+        else
+        {
+            Console.WriteLine("Список авторів пустий...");
         }
     }
 }

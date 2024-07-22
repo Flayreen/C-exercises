@@ -11,7 +11,7 @@ internal abstract class Program
          do
          {
              Console.WriteLine("Виберіть дію з переліку, вибравши її номер");
-             Console.WriteLine($"1. Переглянути усі книги \n2. Додати книгу \n3. Приховати книгу \n4. Видалити книгу з прихованих \n5. Знайти книгу \n6. Вихід з програми");
+             Console.WriteLine($"1. Переглянути усі книги \n2. Додати книгу \n3. Приховати книгу \n4. Видалити книгу з прихованих \n5. Знайти книгу \n6. Список авторів \n8. Вихід з програми");
              Console.Write("Ваш вибір: ");
              useChoice = Console.ReadLine();
 
@@ -34,6 +34,7 @@ internal abstract class Program
                  case "3":
                      Console.Clear();
                      library.HideBook();
+                     Console.ReadKey();
                      Console.Clear();
                      break;
                  case "4":
@@ -51,6 +52,13 @@ internal abstract class Program
                      Console.Clear();
                      break;
                  case "6":
+                     Console.Clear();
+                     library.ShowAllAuthors();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
+                     Console.ReadKey();
+                     Console.Clear();
+                     break;
+                 case "8":
                      Console.WriteLine("Пока!");
                      break;
                  default:
@@ -60,6 +68,6 @@ internal abstract class Program
                      Console.Clear();
                      break;
              }
-         } while (useChoice != "6");
+         } while (useChoice != "8");
     }
 }
