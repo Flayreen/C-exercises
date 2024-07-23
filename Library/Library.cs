@@ -4,7 +4,7 @@ namespace Library;
 
 public class Library : Helpers
 {
-    private const string PathToDatabase = "db/books.json";
+    private const string PathToDatabase = "db/database.json";
 
     private List<Book> BooksList { get; set; } = [];
 
@@ -58,6 +58,12 @@ public class Library : Helpers
                 author.BooksList = BooksList.FindAll(b => b.AuthorId == author.Id);
             }
         }
+    }
+    
+    private string GetFilePath()
+    {
+        var currentDirectory = Directory.GetCurrentDirectory();
+        return Path.Combine(currentDirectory, "db", "database.json");
     }
     
     public void AddBook()

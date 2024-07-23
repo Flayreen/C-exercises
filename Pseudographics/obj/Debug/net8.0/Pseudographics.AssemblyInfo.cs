@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pseudographics")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab4a228b3b8c626db4534a7e6f1cd41c6d8d02cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8895acd630aaad3050acb87bbcfcdf304babb77e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pseudographics")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pseudographics")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
