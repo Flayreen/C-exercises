@@ -11,7 +11,7 @@ internal abstract class Program
          do
          {
              Console.WriteLine("Виберіть дію з переліку, вибравши її номер");
-             Console.WriteLine($"1. Переглянути усі книги \n2. Додати книгу \n3. Приховати книгу \n4. Видалити книгу з прихованих \n5. Знайти книгу \n6. Список авторів \n8. Вихід з програми");
+             Console.WriteLine($"1. Переглянути усі книги \n2. Додати книгу \n3. Приховати книгу \n4. Видалити книгу з прихованих \n5. Знайти книгу \n6. Список авторів \n7. Добавити автора \n8. Вихід з програми");
              Console.Write("Ваш вибір: ");
              useChoice = Console.ReadLine();
 
@@ -54,6 +54,13 @@ internal abstract class Program
                  case "6":
                      Console.Clear();
                      library.ShowAllAuthors();
+                     Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
+                     Console.ReadKey();
+                     Console.Clear();
+                     break;
+                 case "7":
+                     Console.Clear();
+                     library.AddAuthor();
                      Console.Write("\nНажміть будь-яку кнопку, щоб повернутися до головного меню... ");
                      Console.ReadKey();
                      Console.Clear();

@@ -8,10 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="db\books.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="db\authors.txt">
+      <None Update="db\database.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
