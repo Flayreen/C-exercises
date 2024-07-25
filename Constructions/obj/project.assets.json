@@ -8,24 +8,32 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/olegvakarcuk/.nuget/packages/": {}
+    "C:\\Users\\vakar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olegvakarcuk/RiderProjects/C-exercises/Constructions/Constructions.csproj",
+      "projectUniqueName": "D:\\repos\\C-exercises\\Constructions\\Constructions.csproj",
       "projectName": "Constructions",
-      "projectPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Constructions/Constructions.csproj",
-      "packagesPath": "/Users/olegvakarcuk/.nuget/packages/",
-      "outputPath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Constructions/obj/",
+      "projectPath": "D:\\repos\\C-exercises\\Constructions\\Constructions.csproj",
+      "packagesPath": "C:\\Users\\vakar\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\C-exercises\\Constructions\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/olegvakarcuk/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\vakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
