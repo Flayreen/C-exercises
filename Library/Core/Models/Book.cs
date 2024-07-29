@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Library;
+namespace Library.Core.Models;
 
 public class Book
 {

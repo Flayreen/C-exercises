@@ -1,78 +1,25 @@
-using System.Text.Json;
+using Library.Core.Interfaces;
+using Library.Core.Models;
 
-namespace Library;
+namespace Library.Services;
 
-public class Library : Helpers
+public class LibraryService
 {
-    private const string PathToDatabase = "db/database.json";
+    private readonly ILibraryRepository _libraryRepository;
 
-    private List<Book> BooksList { get; set; } = [];
-
-    private List<Author> AuthorsList { get; set; } = [];
-
-    public Library()
+    public LibraryService(ILibraryRepository libraryRepository)
     {
-        LoadData();
-    }
-    
-    private void SaveData()
-    {
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            IncludeFields = true
-        };
-
-        var libraryData = new LibraryData
-        {
-            Books = BooksList,
-            Authors = AuthorsList
-        };
-
-        File.WriteAllText(PathToDatabase, JsonSerializer.Serialize(libraryData, options));
-    }
-    
-    private void LoadData()
-    {
-        if (!File.Exists(PathToDatabase))
-        {
-            return;
-        }
-
-        var jsonString = File.ReadAllText(PathToDatabase);
-
-        if (string.IsNullOrWhiteSpace(jsonString))
-        {
-            return;
-        }
-
-        var libraryData = JsonSerializer.Deserialize<LibraryData>(jsonString);
-
-        if (libraryData != null)
-        {
-            BooksList = libraryData.Books ?? [];
-            AuthorsList = libraryData.Authors ?? [];
-            
-            foreach (var author in AuthorsList)
-            {
-                author.BooksList = BooksList.FindAll(b => b.AuthorId == author.Id);
-            }
-        }
-    }
-    
-    private string GetFilePath()
-    {
-        var currentDirectory = Directory.GetCurrentDirectory();
-        return Path.Combine(currentDirectory, "db", "database.json");
+        _libraryRepository = libraryRepository;
     }
     
     public void AddBook()
     {
+        var library = _libraryRepository.LoadData();
         NotEmptyInput("Введіть назву книги: ", out string bookTitle);
         NotEmptyInput("Введіть рік видачі книги ", out int bookYear);
         
         // Перевірка, чи є ця книга в нашій бібліотеці
-        var findBook = BooksList.FirstOrDefault(b =>
+        var findBook = library.BooksList.FirstOrDefault(b =>
             b.Title.ToLower() == bookTitle.ToLower().Trim() 
             && b.Year == bookYear 
         );
@@ -282,10 +229,35 @@ public class Library : Helpers
             Console.WriteLine($"{findAuthor.Name} {findAuthor.Surname} вже наявний в списку авторів!");
         }
     }
-    
-    private class LibraryData
+
+    private static string NotEmptyInput(string prompt, out string input)
     {
-        public List<Book>? Books { get; set; }
-        public List<Author>? Authors { get; set; }
+        input = string.Empty;
+
+        while (string.IsNullOrWhiteSpace(input))
+        {
+            Console.Write(prompt);
+            input = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Це поле є обовʼяковим. Будь ласка, введіть коректне значення");
+            }
+        }
+
+        return input;
+    }
+
+    private static int NotEmptyInput(string prompt, out int input)
+    {
+        input = 0;
+
+        Console.Write(prompt);
+        while (!int.TryParse(Console.ReadLine(), out input))
+        {
+            Console.WriteLine("Будь ласка, введіть коректне значення: ");
+        }
+
+        return input;
     }
 }

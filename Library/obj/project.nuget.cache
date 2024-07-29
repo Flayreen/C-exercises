@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rBnJFMbkwBGrbIhG3w7heKcDUJHHwdjqo4Mpn0MUtILjAD+T3OKCZPvRxIkzWvlGzaN0HCTu2XygURONlXYmlA==",
+  "dgSpecHash": "EamrGTW9e1aWW9v5Tg4nJaEUPXIjjDwLClf6ywgfpXQy9aG+p8ltZf1M2H2AOcScF/IbCBLcWtXasOvYM9xmLg==",
   "success": true,
-  "projectFilePath": "D:\\repos\\C-exercises\\Library\\Library.csproj",
+  "projectFilePath": "/Users/olegvakarcuk/RiderProjects/C-exercises/Library/Library.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,0 +1,15 @@
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/bin/Debug/net8.0/Array1
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/bin/Debug/net8.0/Array1.deps.json
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/bin/Debug/net8.0/Array1.runtimeconfig.json
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/bin/Debug/net8.0/Array1.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/bin/Debug/net8.0/Array1.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.AssemblyInfoInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.AssemblyInfo.cs
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.csproj.CoreCompileInputs.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.sourcelink.json
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/refint/Array1.dll
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.pdb
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/Array1.genruntimeconfig.cache
+/Users/olegvakarcuk/RiderProjects/C-exercises/Array1/obj/Debug/net8.0/ref/Array1.dll
