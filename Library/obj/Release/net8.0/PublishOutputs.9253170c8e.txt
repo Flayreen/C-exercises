@@ -1,6 +1,0 @@
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/Library
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/db/database.json
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/Library.dll
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/Library.deps.json
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/Library.runtimeconfig.json
-/Users/olegvakarcuk/RiderProjects/C-exercises/Library/publish/Library.pdb
