@@ -1,5 +1,6 @@
 using LibraryProject.Core.Interfaces;
 using LibraryProject.Core.Models;
+using LibraryProject.Utilities;
 
 namespace LibraryProject.Services;
 
@@ -10,12 +11,13 @@ public class LibraryService : ILibraryService
     public LibraryService(ILibraryRepository libraryRepository)
     {
         _libraryRepository = libraryRepository;
+        _libraryRepository.LoadData();
     }
 
     public void AddBook()
     {
-        NotEmptyInput("Введіть назву книги: ", out string bookTitle);
-        NotEmptyInput("Введіть рік видачі книги ", out int bookYear);
+        InputHelper.NotEmptyInput("Введіть назву книги: ", out string bookTitle);
+        InputHelper.NotEmptyInput("Введіть рік видачі книги: ", out int bookYear);
         
         // Перевірка, чи є ця книга в нашій бібліотеці
         var findBook = Library.BooksList.FirstOrDefault(b =>
@@ -25,15 +27,15 @@ public class LibraryService : ILibraryService
         
         if (findBook == null)
         {
-            NotEmptyInput("Введіть імʼя автора ", out string authorName);
-            NotEmptyInput("Введіть прізвище автора ", out string authorSurname);
+            InputHelper.NotEmptyInput("Введіть імʼя автора: ", out string authorName);
+            InputHelper.NotEmptyInput("Введіть прізвище автора: ", out string authorSurname);
             
             var findAuthor = Library.AuthorsList.FirstOrDefault(a => a.Name == authorName && a.Surname == authorSurname);
             
             // Перевірка, чи є нас такий автор в списку бібліотеки
             if (findAuthor == null)
             {
-                NotEmptyInput("Введіть коротку біографія автора ", out string authorBiography);
+                InputHelper.NotEmptyInput("Введіть коротку біографія автора: ", out string authorBiography);
                 Author author = new Author(authorName, authorSurname, authorBiography);
                 Book book = new Book(bookTitle, bookYear, author.Id);
                 author.BooksList.Add(book);
@@ -87,7 +89,7 @@ public class LibraryService : ILibraryService
                 Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {Library.AuthorsList.FirstOrDefault(a => a.Id == books.AuthorId)!.Name} {Library.AuthorsList.FirstOrDefault(a => a.Id == books.AuthorId)!.Surname}");
             }
             
-            NotEmptyInput("\nВведіть назву книги, яку ви хочете приховати: ", out string hiddenBook);
+            InputHelper.NotEmptyInput("\nВведіть назву книги, яку ви хочете приховати: ", out string hiddenBook);
             var bookToHide = Library.BooksList.FirstOrDefault(b => b.Title.ToLower().Trim() == hiddenBook.ToLower().Trim());
 
             if (bookToHide != null)
@@ -127,7 +129,7 @@ public class LibraryService : ILibraryService
                 Console.WriteLine($"Книга {books.Title}, рік видачі {books.Year} - автор {Library.AuthorsList.FirstOrDefault(a => a.Id == books.AuthorId)!.Name} {Library.AuthorsList.FirstOrDefault(a => a.Id == books.AuthorId)!.Surname}");
             }
             
-            NotEmptyInput("\nВведіть назву книги, яку ви хочете видалити з прихованих: ", out string shownBook);
+            InputHelper.NotEmptyInput("\nВведіть назву книги, яку ви хочете видалити з прихованих: ", out string shownBook);
             var bookToHide = hiddenBooksList.FirstOrDefault(b => b.Title.ToLower() == shownBook.ToLower().Trim());
 
             if (bookToHide != null)
@@ -158,7 +160,7 @@ public class LibraryService : ILibraryService
     {
         if (Library.BooksList.Any(b => !b.IsHidden))
         {
-            NotEmptyInput("Введіть назву книгу, рік видачі, імʼя або фамілію автора: ", out string searchPhrase);
+            InputHelper.NotEmptyInput("Введіть назву книгу, рік видачі, імʼя або фамілію автора: ", out string searchPhrase);
             var selectBooks = Library.BooksList.Where(b => 
                 b.Title.ToLower().Contains(searchPhrase.ToLower().Trim()) || 
                 b.Year.ToString().Contains(searchPhrase.ToLower().Trim())).ToList();
@@ -208,8 +210,8 @@ public class LibraryService : ILibraryService
 
     public void AddAuthor()
     {
-        NotEmptyInput("Введіть імʼя автора: ", out string authorName);
-        NotEmptyInput("Введіть фамілію автора: ", out string authorSurname);
+        InputHelper.NotEmptyInput("Введіть імʼя автора: ", out string authorName);
+        InputHelper.NotEmptyInput("Введіть фамілію автора: ", out string authorSurname);
 
         var findAuthor = Library.AuthorsList.FirstOrDefault(a => 
             a.Name.ToLower().Trim() == authorName.ToLower().Trim() 
@@ -217,7 +219,7 @@ public class LibraryService : ILibraryService
 
         if (findAuthor == null)
         {
-            NotEmptyInput("Введіть коротку біографію автора: ", out string authorBiography);
+            InputHelper.NotEmptyInput("Введіть коротку біографію автора: ", out string authorBiography);
             
             Author author = new Author(authorName, authorSurname, authorBiography);
             Library.AuthorsList.Add(author);
@@ -227,38 +229,5 @@ public class LibraryService : ILibraryService
         {
             Console.WriteLine($"{findAuthor.Name} {findAuthor.Surname} вже наявний в списку авторів!");
         }
-    }
-    
-    
-
-    private static string NotEmptyInput(string prompt, out string input)
-    {
-        input = string.Empty;
-
-        while (string.IsNullOrWhiteSpace(input))
-        {
-            Console.Write(prompt);
-            input = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                Console.WriteLine("Це поле є обовʼяковим. Будь ласка, введіть коректне значення");
-            }
-        }
-
-        return input;
-    }
-
-    private static int NotEmptyInput(string prompt, out int input)
-    {
-        input = 0;
-
-        Console.Write(prompt);
-        while (!int.TryParse(Console.ReadLine(), out input))
-        {
-            Console.WriteLine("Будь ласка, введіть коректне значення: ");
-        }
-
-        return input;
     }
 }
